@@ -4,7 +4,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 /**
  * Based on https://viacep.com.br/
@@ -18,8 +18,8 @@ class ViaCepRequest {
 
     private val api: ViaCepAPI by lazy {
         Retrofit.Builder()
-            .baseUrl("http://viacep.com.br/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://viacep.com.br/")
+            .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .run { create(ViaCepAPI::class.java) }
     }
@@ -35,8 +35,7 @@ class ViaCepRequest {
         onSuccess: (Cep?) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        api
-            .buscarCep(cep)
+        api.buscarCep(cep)
             .enqueue(object : Callback<Cep> {
                 override fun onResponse(call: Call<Cep?>, response: Response<Cep>) {
                     response.body()?.let { onSuccess(it) } ?: onSuccess(null)
@@ -64,8 +63,7 @@ class ViaCepRequest {
         onError: (Throwable) -> Unit
     ) {
         if (uf.length == 2 && cidade.length > 3 && logradouro.length > 3) {
-            api
-                .buscarCepsPorEndereco(uf, cidade, logradouro)
+            api.buscarCepsPorEndereco(uf, cidade, logradouro)
                 .enqueue(object : Callback<List<Cep>> {
                     override fun onResponse(call: Call<List<Cep>>, response: Response<List<Cep>>) {
                         response.body()?.let { onSuccess(it) } ?: onSuccess(emptyList())
