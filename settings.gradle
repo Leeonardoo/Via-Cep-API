@@ -1,1 +1,2 @@
 include ':viacepapi', ':example'
+rootProject.name = "Via-Cep-API"
