@@ -1,5 +1,6 @@
 package com.github.jeancsanchez.viacepapi
 
+import androidx.annotation.Keep
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,6 +15,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  * Jesus is alive!
  */
 @Suppress("SpellCheckingInspection")
+@Keep
 class ViaCepRequest {
 
     private val api: ViaCepAPI by lazy {
