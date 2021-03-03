@@ -1,5 +1,6 @@
 package com.github.jeancsanchez.viacepapi
 
+import androidx.annotation.Keep
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -10,6 +11,7 @@ import retrofit2.http.Path
  * Jesus is alive!
  */
 @Suppress("SpellCheckingInspection")
+@Keep
 internal interface ViaCepAPI {
 
     @GET("ws/{cep}/json/")
