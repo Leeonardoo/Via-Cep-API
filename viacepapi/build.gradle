@@ -4,7 +4,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
 group = 'com.github.leeonardoo'
-version = '1.1.0'
+version = '1.1.1'
 
 android {
     compileSdkVersion 30
@@ -13,7 +13,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 30
         versionCode 1
-        versionName "1.1.0"
+        versionName "1.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -63,7 +63,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.leeonardoo'
                 artifactId = 'Via-Cep-API'
-                version = '1.1.0'
+                version = '1.1.1'
             }
         }
     }
