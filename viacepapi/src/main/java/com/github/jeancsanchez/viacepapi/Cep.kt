@@ -12,29 +12,29 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Cep(
     @Json(name = "cep")
-    val cep: String,
+    val cep: String?,
 
     @Json(name = "bairro")
-    val bairro: String,
+    val bairro: String?,
 
     @Json(name = "complemento")
-    val complemento: String,
+    val complemento: String?,
 
     @Json(name = "gia")
-    val gia: String,
+    val gia: String?,
 
     @Json(name = "ibge")
-    val ibge: String,
+    val ibge: String?,
 
     @Json(name = "localidade")
-    val localidade: String,
+    val localidade: String?,
 
     @Json(name = "logradouro")
-    val logradouro: String,
+    val logradouro: String?,
 
     @Json(name = "uf")
-    val uf: String,
+    val uf: String?,
 
     @Json(name = "unidade")
-    val unidade: String
+    val unidade: String?
 )
